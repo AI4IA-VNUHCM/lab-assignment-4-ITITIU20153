@@ -51,7 +51,29 @@ void Ex3(int in_arr[], int n){
 	int a[SIZE][SIZE];
 	Array2Dconverter(in_arr,a,n,n);
 	//Your codes here
-	
+	int count,count1,m=n-1;
+	for (int i=0;i<n;i++)
+	{
+		for (int j=i+1;j<n;j++)
+	{
+		if (a[i][i]>a[j][j]) 
+		{
+			count=a[i][i];
+			a[i][i]=a[j][j];
+			a[j][j]=count;
+		}
+	}
+	}
+	for (int i1=0;i1<n;i1++){
+		for (int i2=i1+1;i2<n;i2++){
+			if (a[i1][m-i1]>a[i2][m-i2])
+			{
+				count1=a[i1][m-i1];
+				a[i1][m-i1]=a[i2][m-i2];
+				a[i2][m-i2]=count1;
+			}
+		}
+	}
 	printArray(a,n,n);
 }
 
