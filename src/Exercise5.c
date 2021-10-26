@@ -32,12 +32,36 @@ void Array2Dconverter(int arr[], int a[SIZE][SIZE], int m, int n)
 		}
 	}
 }
-
 void Ex5(int arr[], int m, int n){
 	int a[SIZE][SIZE];
 	Array2Dconverter(arr,a,m,n);
 	//Your codes here
-
+	int count;
+	//oder the row of the array
+	for(int j=0;j<n;j++)
+	{
+		for(int i=0;i<m;i++)
+		{
+			for(int j1=j+1;j1<n;j1++)
+			{
+				if (a[i][j]>a[i][j1])
+				{
+					count=a[i][j];
+					a[i][j]=a[i][j1];
+					a[i][j1]=count;
+				}
+			}
+		}
+	}
+	//print min
+	int max;
+	max=a[0][0];
+	for(int row=1;row<m;row++)
+	{	
+		if (max<a[row][0])
+			max=a[row][0];
+	}
+	printf("%d",max);
 }
 
 int main(int argc, char *argv[]) {
