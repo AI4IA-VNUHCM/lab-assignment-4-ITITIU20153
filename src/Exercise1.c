@@ -17,7 +17,10 @@ ______________________________________
 
 void Ex1(int n){
 	//Your codes here
-    
+	if (n==0) 
+			printf("%d",n);
+	Ex1
+	
 }
 
 int main(int argc, char *argv[]) {
